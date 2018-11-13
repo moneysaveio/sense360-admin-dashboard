@@ -5,12 +5,16 @@ import contactSagas from './Contact';
 import chatSagas from './Chat';
 import authSagas from './Auth';
 
+// custom
+import locationSagas from './Location';
+
 export default function* rootSaga (getState) {
     yield all ([
         mailSagas (),
         toDoSagas (),
         contactSagas (),
         chatSagas (),
-        authSagas ()
+        authSagas (),
+        locationSagas()
     ]);
 }

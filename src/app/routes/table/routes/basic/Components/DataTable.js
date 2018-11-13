@@ -5,6 +5,8 @@ import DataTableCell from './DataTableCell';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import { fetchAllLocations } from 'actions/Location';
+
 let counter = 0;
 
 function createData(image, name, memberFrom, lastLogin, role, status) {
@@ -24,8 +26,26 @@ class DataTable extends Component {
         ],
     };
 
+    componentDidMount() {
+        this.props.fetchAllLocations();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const data = [];
+        if (this.props.allLocations &&
+            this.props.allLocations.length &&
+            prevProps != this.props) {
+            this.props.allLocations[0].map((item) => {
+                data.push( createData('http://via.placeholder.com/150x150', item[0], item[1], item[2], item[4], 'active') )
+            })
+            this.setState( {
+                data
+            } )
+        }
+    }
     render() {
         const {data} = this.state;
+        console.log("fetch locations data function", this.props.fetchAllLocations)
         return (
             <div className="table-responsive-material">
                 <Table className="table-middle fst-td-br-tp-0">
@@ -42,9 +62,11 @@ class DataTable extends Component {
     }
 }
 
-const mapStateToProps = ({settings}) => {
-    console.log("new location data", settings);
-    return {settings}
+const mapStateToProps = ({locations}) => {
+    const { allLocations } = locations;
+    return { allLocations };
 };
-export default withRouter(connect(mapStateToProps)(DataTable));
+export default withRouter(connect(mapStateToProps, {
+    fetchAllLocations
+})(DataTable));
 // export default DataTable;

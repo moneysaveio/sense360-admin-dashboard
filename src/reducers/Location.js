@@ -12,7 +12,9 @@ import {
     SHOW_MESSAGE,
     SUBMIT_COMMENT,
     UPDATE_MESSAGE_VALUE,
-    UPDATE_SEARCH_CHAT_USER
+    UPDATE_SEARCH_CHAT_USER,
+    FETCH_ALL_LOCATIONS,
+    FETCH_ALL_LOCATIONS_SUCCESS
 } from 'constants/ActionTypes';
 import { USER_INFO_STATE } from '../constants/ActionTypes';
 
@@ -39,6 +41,12 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
 
     switch (action.type) {
+        case FETCH_ALL_LOCATIONS_SUCCESS:
+            console.log("succesfully called fetch all locations success action", action, state)
+            return {
+                ...state,
+                allLocations: action.payload
+            }
         case FILTER_CONTACT: {
             if (action.payload === '') {
                 return {

@@ -140,4 +140,8 @@ export const UPDATE_SEARCH = 'update_search';
 // custom
 export const FETCH_ALL_LOCATIONS = 'fetch_all_locations';
 export const FETCH_ALL_LOCATIONS_SUCCESS = 'fetch_all_locations_success';
+export const SHOW_AlL_LOCATIONS = 'show_all_locations';
+export const CREATE_LOCATIONS = 'create_locations';
+export const CREATE_LOCATIONS_SUCCESS = 'create_locations_success';
+export const POST_LOCATION_DATA = 'post_location_data';
 
