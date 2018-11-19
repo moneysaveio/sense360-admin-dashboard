@@ -13,8 +13,8 @@ import {
     SUBMIT_COMMENT,
     UPDATE_MESSAGE_VALUE,
     UPDATE_SEARCH_CHAT_USER,
-    FETCH_ALL_LOCATIONS,
-    FETCH_ALL_LOCATIONS_SUCCESS
+    FETCH_RECENT_SENSOR_DATA,
+    FETCH_RECENT_SENSOR_DATA_SUCCESS
 } from 'constants/ActionTypes';
 import { USER_INFO_STATE } from '../constants/ActionTypes';
 
@@ -41,10 +41,11 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
 
     switch (action.type) {
-        case FETCH_ALL_LOCATIONS_SUCCESS:
+        case FETCH_RECENT_SENSOR_DATA_SUCCESS:
             return {
                 ...state,
-                allLocations: action.payload
+                allSensorData: action.payload,
+                voltages: action.payload
             }
         case FILTER_CONTACT: {
             if (action.payload === '') {

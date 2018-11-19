@@ -18,7 +18,6 @@ export const fetchAllLocations = () => {
 }
 
 export const postLocationData = (locations) => {
-    console.log("in action", locations)
     return {
         type: POST_LOCATION_DATA,
         payload: locations

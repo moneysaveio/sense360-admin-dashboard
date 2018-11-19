@@ -7,6 +7,7 @@ import authSagas from './Auth';
 
 // custom
 import locationSagas from './Location';
+import sensorSagas from './Sensor';
 
 export default function* rootSaga (getState) {
     yield all ([
@@ -15,6 +16,7 @@ export default function* rootSaga (getState) {
         contactSagas (),
         chatSagas (),
         authSagas (),
-        locationSagas()
+        locationSagas(),
+        sensorSagas()
     ]);
 }

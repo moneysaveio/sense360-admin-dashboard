@@ -7,6 +7,7 @@ import Mail from './Mail';
 import ToDo from './ToDo';
 import Auth from './Auth';
 import Location from './Location';
+import Sensor from './Sensor';
 
 const reducers = combineReducers ({
     routing: routerReducer,
@@ -17,6 +18,7 @@ const reducers = combineReducers ({
     toDo: ToDo,
     auth: Auth,
     locations: Location,
+    sensors: Sensor
 });
 
 export default reducers;
