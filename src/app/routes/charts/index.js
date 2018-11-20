@@ -16,6 +16,7 @@ const Chart = ({ match }) => (
             <Route path={`${match.url}/radial`} component={asyncComponent (() => import('./routes/radial'))} />
             <Route path={`${match.url}/scatter`} component={asyncComponent (() => import('./routes/scatter'))} />
             <Route path={`${match.url}/treemap`} component={asyncComponent (() => import('./routes/treemap'))} />
+            <Route path={`${match.url}/sensors`} component={asyncComponent (() => import('./routes/sensors'))} />
             <Route
                 component={asyncComponent(() => import('app/routes/extraPages/routes/404'))}/>
         </Switch>

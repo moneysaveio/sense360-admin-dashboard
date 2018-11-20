@@ -516,6 +516,11 @@ class SidenavContent extends Component {
                                     <span className="nav-text"><IntlMessages id="sidebar.chart.tree"/></span>
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/chart/sensors">
+                                    <span className="nav-text"><IntlMessages id="sidebar.chart.sensors"/></span>
+                                </NavLink>
+                            </li>
                         </ul>
                     </li>
 

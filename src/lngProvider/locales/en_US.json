@@ -78,6 +78,7 @@
   "sidebar.chart.radial": "Radial Chart",
   "sidebar.chart.radar": "Radar Chart",
   "sidebar.chart.tree": "Tree Chart",
+  "sidebar.chart.sensors": "Sensor Chart",
   "sidebar.map": "Google Map",
   "sidebar.map.simple": "Simple Map",
   "sidebar.map.styled": "Styled Map",
