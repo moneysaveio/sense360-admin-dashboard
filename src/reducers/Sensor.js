@@ -42,6 +42,7 @@ export default (state = INIT_STATE, action) => {
 
     switch (action.type) {
         case FETCH_RECENT_SENSOR_DATA_SUCCESS:
+            console.log(action.payload)
             return {
                 ...state,
                 allSensorData: action.payload,

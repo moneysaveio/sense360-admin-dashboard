@@ -20,7 +20,7 @@
     "isomorphic-fetch": "^2.2.1",
     "json-parse-better-errors": "^1.0.2",
     "match-sorter": "^2.2.1",
-    "moment": "^2.19.2",
+    "moment": "^2.22.2",
     "namor": "^1.0.1",
     "node-sass": "^4.7.2",
     "nprogress": "^0.2.0",

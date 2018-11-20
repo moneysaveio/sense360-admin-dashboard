@@ -20,7 +20,11 @@ const getLocationsData = async () =>
         .catch(error => error);
 
 const getRecentSensorData = async () =>
-    await database.ref ('sensors/data').once ('value')
+    await database
+        .ref ('sensors/data')
+        .orderByChild("dateAdded")
+        .limitToLast(20)
+        .once ('value')
         .then((snapshot) => {
             const sensorData = [];
             snapshot.forEach((rawData) => {
@@ -67,54 +71,6 @@ const getUsersConversation = async () =>
         })
         .catch (error => error);
 
-
-// function* fetchLocationsRequest () {
-//     try {
-//         const fetchedSensorData = yield call (getLocationsData);
-//         yield put (fetchAllLocationsSuccess (fetchedSensorData));
-//     } catch (error) {
-//         yield put (showChatMessage (error));
-//     }
-// }
-
-// function* fetchChatUserRequest () {
-//     try {
-//         const fetchedTodo = yield call (getChatUsers);
-//         yield put (fetchChatUserSuccess (fetchedTodo));
-//     } catch (error) {
-//         yield put (showChatMessage (error));
-//     }
-// }
-
-// function* fetchChatUserConversationRequest () {
-//     try {
-//         const fetchedTodoConversation = yield call (getUsersConversation);
-//         yield put (fetchChatUserConversationSuccess (fetchedTodoConversation));
-//     } catch (error) {
-//         yield put (showChatMessage (error));
-//     }
-// }
-
-// export function* fetchChatUser () {
-//     yield takeEvery (FETCH_ALL_CHAT_USER, fetchChatUserRequest);
-// }
-
-// export function* fetchChatUserConversation () {
-//     yield takeEvery (FETCH_ALL_CHAT_USER_CONVERSATION, fetchChatUserConversationRequest);
-// }
-
-// // custom
-// export function* fetchAllLocations () {
-//     yield takeEvery (FETCH_ALL_LOCATIONS, fetchLocationsRequest);
-// }
-
-// export function* postLocations () {
-//     yield takeEvery (POST_LOCATION_DATA, postLocationData);
-// }
-
-// export default function* rootSaga () {
-//     yield all ([fork (fetchChatUserConversation), fork (fetchChatUser), fork(fetchAllLocations), fork(postLocations)]);
-// }
 
 function* fetchRecentSensorDataRequest () {
     try {
