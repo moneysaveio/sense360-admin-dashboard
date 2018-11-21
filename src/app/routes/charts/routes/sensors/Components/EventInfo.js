@@ -8,18 +8,6 @@ import InfoCard from 'components/InfoCard';
 
 import { fetchAllSensorDataCount } from 'actions/Sensor';
 
-
-// remove later
-// import {
-//     cardData,
-//     cardData1,
-//     cardData2,
-//     connections,
-//     data1,
-//     expanseData,
-//     todoData
-// } from 'app/routes/dashboard/routes/data'
-
 class EventInfo extends Component {
     state = {
         title: 0,
@@ -28,6 +16,9 @@ class EventInfo extends Component {
     }
     componentDidMount() {
         this.props.fetchAllSensorDataCount();
+        const intervalId = setInterval(() => {
+            this.props.fetchAllSensorDataCount();
+        }, 10000)
     }
 
     componentDidUpdate(prevProps, prevState) {

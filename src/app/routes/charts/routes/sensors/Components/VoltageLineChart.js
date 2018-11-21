@@ -115,5 +115,3 @@ const mapStateToProps = ({ sensors }) => {
 export default withRouter(connect(mapStateToProps, {
     fetchRecentSensorData
 })(SimpleLineChart));
-
-// export default SimpleLineChart

@@ -17,30 +17,19 @@ import VoltageLineChart from './Components/VoltageLineChart';
 import CurrentLineChart from './Components/CurrentLineChart';
 import PowerFactorLineChart from './Components/PowerFactorLineChart';
 
-// remove later
-import {
-    cardData,
-    cardData1,
-    cardData2,
-    connections,
-    data1,
-    expanseData,
-    todoData
-} from 'app/routes/dashboard/routes/data'
-
 const LineChart = ({ match }) => {
     return (
         <div className="animated slideInUpTiny animation-duration-3">
             <ContainerHeader title={<IntlMessages id="sidebar.chart.sensors" />} match={match} />
 
             <div className="row">
-                <CardBox heading="Voltage Line Chart">
+                <CardBox heading="Voltage">
                     <VoltageLineChart />
                 </CardBox>
-                <CardBox heading="Current Line Chart">
+                <CardBox heading="Current">
                     <CurrentLineChart />
                 </CardBox>
-                <CardBox heading="Powerfactor Line Chart">
+                <CardBox heading="Powerfactor">
                     <PowerFactorLineChart />
                 </CardBox>
                 <EventInfo />
