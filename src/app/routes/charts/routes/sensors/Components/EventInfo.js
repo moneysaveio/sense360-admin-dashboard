@@ -47,25 +47,9 @@ class EventInfo extends Component {
     }
 }
 const mapStateToProps = ({ sensors }) => {
-
     const { allSensorDataCount } = sensors;
-    console.log(allSensorDataCount)
     return { allSensorDataCount };
 };
 export default withRouter(connect(mapStateToProps, {
     fetchAllSensorDataCount
 })(EventInfo));
-
-// const EventInfo = ({ match }) => {
-//     const cardData = {
-//         title: 1500,
-//         subTitle: "API calls today"
-//     }
-//     return (
-//             <div className="col-sm-6 col-12">
-//                 <InfoCard data={cardData} styleName="bg-secondary"/>
-//             </div>
-//     );
-// };
-
-// export default EventInfo;

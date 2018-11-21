@@ -36,10 +36,24 @@ function calculateSeconds(startDate, endDate)
    return seconds;
 }
 
+class CustomizedXAxisTick extends Component {
+    render () {
+        const {x, y, payload} = this.props;
+        return (
+            <g transform={`translate(${x},${y})`}>
+                <text x={-10} y={30}
+                        textAnchor="start"
+                        fill="#666">{payload.index}</text>
+            </g>
+        );
+    }
+};
+
 class SimpleLineChart extends Component {
     state = {
         data: [],
         timeMap: {},
+        counter: 1,
         inProgress: false
     }
 
@@ -64,6 +78,7 @@ class SimpleLineChart extends Component {
             prevProps != this.props &&
             this.state.inProgress) {
             this.props.allSensorData.map((item) => {
+                item.timestamp = moment(item.timestamp).fromNow();
                 data.push( item )
             })
             this.setState( {
@@ -78,7 +93,7 @@ class SimpleLineChart extends Component {
         <ResponsiveContainer width="100%" height={200}>
             <LineChart data={this.state.data}
                        margin={{ top: 10, right: 0, left: - 25, bottom: 0 }}>
-                <XAxis dataKey="timestamp" />
+                <XAxis dataKey="timestamp" tick={<CustomizedXAxisTick/>} />
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3" />
                 <Tooltip />
