@@ -6,7 +6,7 @@ import moment from "moment";
 
 import InfoCard from 'components/InfoCard';
 
-import { fetchRecentSensorData } from 'actions/Sensor';
+import { fetchAllSensorDataCount } from 'actions/Sensor';
 
 
 // remove later
@@ -27,33 +27,14 @@ class EventInfo extends Component {
         lastReceived: false
     }
     componentDidMount() {
-        this.props.fetchRecentSensorData();
+        this.props.fetchAllSensorDataCount();
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const data = [];
-        if (this.props.allSensorData &&
-            this.props.allSensorData.length) {
-            const calls = this.state.title + this.props.allSensorData.length;
-
-            if (!this.state.lastReceived) {
-                this.setState( {
-                    title: calls,
-                    lastReceived: moment()
-                } )                
-            } else {
-                const now = moment();
-                const minutesPassed = this.state.lastReceived.diff(now, 'minutes');
-                const isReceivable = minutesPassed > 2;
-                if (isReceivable) {
-                    this.setState( {
-                        title: calls,
-                        lastReceived: now
-                    } )
-                }
-            }
-
-
+        if (prevProps != this.props) {
+            this.setState({
+                title: this.props.allSensorDataCount
+            })
         }
     }
 
@@ -67,12 +48,12 @@ class EventInfo extends Component {
 }
 const mapStateToProps = ({ sensors }) => {
 
-    const { allSensorData } = sensors;
-    console.log(allSensorData)
-    return { allSensorData };
+    const { allSensorDataCount } = sensors;
+    console.log(allSensorDataCount)
+    return { allSensorDataCount };
 };
 export default withRouter(connect(mapStateToProps, {
-    fetchRecentSensorData
+    fetchAllSensorDataCount
 })(EventInfo));
 
 // const EventInfo = ({ match }) => {

@@ -9,9 +9,7 @@ const getLocationsData = async () =>
     await database.ref ('locations/office').once ('value')
         .then((snapshot) => {
             const locations = [];
-            console.log("called sagas for getLocationsData", snapshot)
             snapshot.forEach((rawData) => {
-                console.log('raw data each getLocationsData', rawData.val())
                 locations.push (rawData.val());
             });
             return locations;

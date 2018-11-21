@@ -19,12 +19,21 @@ class Accept extends React.Component {
     constructAllLocationAddresses (table) {
         const headers = table[0]
         const locations = [];
+        var records;
         table.map((row, rowId) => {
+            if (rowId == 0) {
+                records = row;
+            }
             if (rowId > 0) {
+                const record = {};
                 console.log(rowId, row, row.length, headers.length);
-                locations.push(row)
+                row.map((item, index) => {
+                    record[records[index]] = item;
+                })
+                locations.push(record)
             }
         })
+        console.log(locations)
         this.props.postLocationData(locations)
     }
 

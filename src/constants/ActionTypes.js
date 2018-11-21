@@ -150,4 +150,6 @@ export const POST_LOCATION_DATA = 'post_location_data';
 // sensors
 export const FETCH_RECENT_SENSOR_DATA = 'fetch_recent_sensor_data';
 export const FETCH_RECENT_SENSOR_DATA_SUCCESS = 'fetch_recent_sensor_data_success';
+export const FETCH_ALL_SENSOR_DATA_COUNT = 'fetch_all_sensor_data_count_request'
+export const FETCH_ALL_SENSOR_DATA_COUNT_SUCCESS = 'fetch_all_sensor_data_count_success'
 

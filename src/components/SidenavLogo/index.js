@@ -9,8 +9,8 @@ const SidenavLogo = ({drawerType}) => {
         <div className="sidebar-header d-flex align-items-center">
             {showMini ?
                 <div className="mini-logo">
-                    <img className="mini-logo-img" alt='...' src='http://via.placeholder.com/32x32'/>
-                    <img className="mini-logo-img-hover" alt='...' src='http://via.placeholder.com/105x36'/>
+                    <img className="mini-logo-img" alt='...' src='assets/images/360-infra-px.png'/>
+                    <img className="mini-logo-img-hover" alt='...' src='assets/images/Sense-360-large.png'/>
                 </div> : <img alt='...' src='http://via.placeholder.com/105x36'/>
             }
         </div>

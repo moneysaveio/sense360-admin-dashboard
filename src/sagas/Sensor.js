@@ -1,10 +1,17 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
 import { database } from 'firebase/firebase';
-import { FETCH_ALL_CHAT_USER, FETCH_ALL_CHAT_USER_CONVERSATION, FETCH_RECENT_SENSOR_DATA, FETCH_RECENT_SENSOR_DATA_SUCCESS } from 'constants/ActionTypes';
+import { 
+    FETCH_ALL_CHAT_USER, 
+    FETCH_ALL_CHAT_USER_CONVERSATION, 
+    FETCH_RECENT_SENSOR_DATA, 
+    FETCH_RECENT_SENSOR_DATA_SUCCESS,
+    FETCH_ALL_SENSOR_DATA_COUNT,
+
+} from 'constants/ActionTypes';
 import { fetchChatUserConversationSuccess, fetchChatUserSuccess, showChatMessage } from 'actions/Chat';
 import { fetchAllLocationsSuccess } from 'actions/Location';
-import { fetchRecentSensorDataSuccess } from 'actions/Sensor';
+import { fetchRecentSensorDataSuccess, fetchAllSensorDataCountSuccess } from 'actions/Sensor';
 
 import { POST_LOCATION_DATA } from 'constants/ActionTypes';
 
@@ -19,7 +26,17 @@ const getLocationsData = async () =>
         })
         .catch(error => error);
 
-const getRecentSensorData = async () =>
+const getAllSensorDataCount = async () =>
+    await database
+        .ref ('global/metrics')
+        .once ('value')
+        .then((snapshot) => {
+            const metrics = snapshot.val().total;
+            return metrics;
+        })
+        .catch(error => error);
+
+const getRecentSensorData= async () =>
     await database
         .ref ('sensors/data')
         .orderByChild("dateAdded")
@@ -81,10 +98,23 @@ function* fetchRecentSensorDataRequest () {
     }
 }
 
+function* fetchAllSensorDataCountRequest () {
+    try {
+        const dataCount = yield call (getAllSensorDataCount);
+        yield put (fetchAllSensorDataCountSuccess (dataCount));
+    } catch (error) {
+        yield put (showChatMessage (error));
+    }
+}
+
 export function* fetchRecentSensorData () {
     yield takeEvery (FETCH_RECENT_SENSOR_DATA, fetchRecentSensorDataRequest);
 }
 
+export function* fetchAllSensorDataCount () {
+    yield takeEvery (FETCH_ALL_SENSOR_DATA_COUNT, fetchAllSensorDataCountRequest);
+}
+
 export default function* rootSaga () {
-    yield all ([fork(fetchRecentSensorData)]);
+    yield all ([fork(fetchRecentSensorData), fork(fetchAllSensorDataCount)]);
 }

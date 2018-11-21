@@ -35,8 +35,9 @@ class DataTable extends Component {
         if (this.props.allLocations &&
             this.props.allLocations.length &&
             prevProps != this.props) {
+            console.log(this.props.allLocations)
             this.props.allLocations[0].map((item) => {
-                data.push( createData('http://via.placeholder.com/150x150', item[0], item[1], item[2], item[4], 'active') )
+                data.push( createData('http://via.placeholder.com/150x150', item['Location Code'], item['Client Name'], item['City'], item['Location Name'], 'active') )
             })
             this.setState( {
                 data

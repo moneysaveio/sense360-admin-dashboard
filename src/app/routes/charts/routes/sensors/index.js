@@ -31,7 +31,7 @@ import {
 const LineChart = ({ match }) => {
     return (
         <div className="animated slideInUpTiny animation-duration-3">
-            <ContainerHeader title={<IntlMessages id="chart.sensors" />} match={match} />
+            <ContainerHeader title={<IntlMessages id="sidebar.chart.sensors" />} match={match} />
 
             <div className="row">
                 <CardBox heading="Voltage Line Chart">
