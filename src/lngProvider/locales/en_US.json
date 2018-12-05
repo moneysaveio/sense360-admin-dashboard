@@ -1,5 +1,6 @@
 {
   "sidebar.main": "Main",
+  "sidebar.admin": "Admin",
   "sidebar.dashboard": "Dashboard",
   "sidebar.dashboard.default": "Default",
   "sidebar.dashboard.ecommerce": "eCommerce",
@@ -56,6 +57,7 @@
   "sidebar.form": "Form",
   "sidebar.forms": "Forms",
   "sidebar.forms.components": "Components",
+  "sidebar.forms.audits": "Audits",
   "sidebar.forms.stepper": "Stepper",
   "sidebar.extensions": "Extensions",
   "sidebar.editors": "Editors",
@@ -560,5 +562,9 @@
   "popup.statistics": "Statistics",
   "popup.clearData": "Clear Data",
   "component.selectionControl.radioBtnGroup": "Radio Buttons Group",
-  "component.popover.anchorPlayground": "Anchor Playground"
+  "component.popover.anchorPlayground": "Anchor Playground",
+
+  "forms.audit.uploadClientLogo": "Upload Client Logo",
+  "forms.audit.isUsingGloves": "Concerned Auditor is wearing gloves and shoes for saftey?",
+  "forms.audit.powerSupply": "Supply of power"
 }

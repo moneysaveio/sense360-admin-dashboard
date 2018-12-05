@@ -15,6 +15,7 @@
     "draft-js": "^0.10.4",
     "draftjs-to-html": "^0.8.1",
     "firebase": "^4.10.1",
+    "firebase-admin": "^6.3.0",
     "history": "^4.7.2",
     "install": "^0.10.1",
     "isomorphic-fetch": "^2.2.1",

@@ -27,6 +27,7 @@ class SignUp extends React.Component {
     }
 
     componentDidUpdate () {
+        console.log("props", this.props)
         if (this.props.showMessage) {
             setTimeout (() => {
                 this.props.hideMessage ();
@@ -70,7 +71,7 @@ class SignUp extends React.Component {
                                     <input
                                         type="text"
                                         placeholder="Name"
-                                        onChange={(event) => this.setState ({ name: event.target.value })}
+                                        onChange={(event) => { this.setState ({ name: event.target.value }); event.stopPropagation() } } 
                                         defaultValue={name}
                                         className="form-control form-control-lg"
                                     />
@@ -80,7 +81,7 @@ class SignUp extends React.Component {
                                 <div className="form-group mb-3">
                                     <input
                                         type="email"
-                                        onChange={(event) => this.setState ({ email: event.target.value })}
+                                        onChange={(event) => { this.setState ({ email: event.target.value }); event.stopPropagation() }}
                                         placeholder="Email"
                                         defaultValue={email}
                                         className="form-control form-control-lg"
@@ -90,7 +91,7 @@ class SignUp extends React.Component {
                                 <div className="form-group mb-3">
                                     <input
                                         type="password"
-                                        onChange={(event) => this.setState ({ password: event.target.value })}
+                                        onChange={(event) => { this.setState ({ password: event.target.value }); event.stopPropagation() }}
                                         placeholder="Password"
                                         defaultValue={password}
                                         className="form-control form-control-lg"

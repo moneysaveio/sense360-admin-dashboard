@@ -84,6 +84,79 @@ class SidenavContent extends Component {
 
                     <li className="menu">
                         <a role="button" href="javascript:void(0)">
+                            <i className="zmdi zmdi-chart zmdi-hc-fw"/>
+                            <span className="nav-text"><IntlMessages id="sidebar.chart"/></span>
+                        </a>
+
+                        <ul className="sub-menu">
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/chart/sensors">
+                                    <span className="nav-text"><IntlMessages id="sidebar.chart.sensors"/></span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li className="nav-header"><IntlMessages id="sidebar.admin"/></li>
+
+                    <li className="menu">
+                        <a role="button" href="javascript:void(0)">
+                            <i className="zmdi zmdi-view-web zmdi-hc-fw"/>
+                            <span className="nav-text"><IntlMessages id="sidebar.tables"/></span>
+                        </a>
+
+                        <ul className="sub-menu">
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/table/basic">
+                                    <span className="nav-text"><IntlMessages id="sidebar.tables.basicTable"/></span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/table/data">
+                                    <span className="nav-text"><IntlMessages id="sidebar.tables.dataTable"/></span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li className="menu">
+                        <a role="button" href="javascript:void(0)">
+                            <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
+                            <span className="nav-text">
+                            <IntlMessages id="sidebar.dashboard"/>
+                        </span>
+                        </a>
+                        <ul className="sub-menu">
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/dashboard/default">
+                                    <span className="nav-text"><IntlMessages id="sidebar.dashboard.default"/></span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/dashboard/eCommerce">
+                                <span className="nav-text text-transform-none"><IntlMessages
+                                    id="sidebar.dashboard.ecommerce"/></span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/dashboard/news">
+                                    <span className="nav-text"><IntlMessages id="sidebar.dashboard.news"/></span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/dashboard/intranet">
+                                        <span className="nav-text"><IntlMessages
+                                            id="sidebar.dashboard.intranet"/></span>
+                                </NavLink>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li className="nav-header"><IntlMessages id="sidebar.main"/></li>
+
+                    <li className="menu">
+                        <a role="button" href="javascript:void(0)">
                             <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"/>
                             <span className="nav-text">
                             <IntlMessages id="sidebar.dashboard"/>
@@ -375,6 +448,11 @@ class SidenavContent extends Component {
                             <li>
                                 <NavLink className="prepend-icon" to="/app/form/components">
                                     <span className="nav-text"><IntlMessages id="sidebar.forms.components"/></span>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="prepend-icon" to="/app/form/audits">
+                                    <span className="nav-text"><IntlMessages id="sidebar.forms.audits"/></span>
                                 </NavLink>
                             </li>
                         </ul>

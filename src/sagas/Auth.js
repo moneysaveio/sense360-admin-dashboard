@@ -23,10 +23,27 @@ import {
     userTwitterSignInSuccess
 } from '../actions/Auth';
 
+const createUserWithEmailSignInLinkRequest = async (email, password) => {
+    // Sending email with sign-in link.
+    // [START authwithemail]
+    var actionCodeSettings = {
+        // URL you want to redirect back to. The domain (www.example.com) for this URL
+        // must be whitelisted in the Firebase Console.
+        'url': window.href.url, // Here we redirect back to this same page.
+        'handleCodeInApp': true // This must be true.
+    };
+    return auth.sendSignInLinkToEmail(email, actionCodeSettings)
+        .then(authUser => {
+            console.log(authUser)
+        })
+        .catch (error => error);
+    // [END authwithemail]
+}
 const createUserWithEmailPasswordRequest = async (email, password) =>
     await  auth.createUserWithEmailAndPassword (email, password)
         .then (authUser => authUser)
         .catch (error => error);
+
 
 const signInUserWithEmailPasswordRequest = async (email, password) =>
     await  auth.signInWithEmailAndPassword (email, password)
@@ -43,6 +60,7 @@ function* createUserWithEmailPassword ({ payload }) {
     const { email, password } = payload;
     try {
         const signUpUser = yield call (createUserWithEmailPasswordRequest, email, password);
+        console.log(signUpUser)
         if (signUpUser.message) {
             yield put (showAuthMessage (signUpUser.message));
         } else {
