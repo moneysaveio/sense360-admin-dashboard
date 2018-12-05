@@ -33,9 +33,7 @@ const createUserWithEmailSignInLinkRequest = async (email, password) => {
         'handleCodeInApp': true // This must be true.
     };
     return auth.sendSignInLinkToEmail(email, actionCodeSettings)
-        .then(authUser => {
-            console.log(authUser)
-        })
+        .then(authUser => authUser)
         .catch (error => error);
     // [END authwithemail]
 }
@@ -59,8 +57,7 @@ const signOutRequest = async () =>
 function* createUserWithEmailPassword ({ payload }) {
     const { email, password } = payload;
     try {
-        const signUpUser = yield call (createUserWithEmailPasswordRequest, email, password);
-        console.log(signUpUser)
+        const signUpUser = yield call (createUserWithEmailSignInLinkRequest, email, password);
         if (signUpUser.message) {
             yield put (showAuthMessage (signUpUser.message));
         } else {

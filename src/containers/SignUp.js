@@ -27,14 +27,17 @@ class SignUp extends React.Component {
     }
 
     componentDidUpdate () {
-        console.log("props", this.props)
         if (this.props.showMessage) {
             setTimeout (() => {
                 this.props.hideMessage ();
             }, 3000);
         }
         if (this.props.authUser !== null) {
-            this.props.history.push ('/');
+            if (this.props.authUser.emailVerified) {
+                this.props.history.push ('/');
+            } else {
+                this.props.history.push('/signin');
+            }
         }
     }
 
