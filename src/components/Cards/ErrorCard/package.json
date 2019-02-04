@@ -1,0 +1,10 @@
+{
+    "name": "ErrorCard",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./ErrorCard.js",
+    "dependencies": {
+      "reactstrap": "next"
+    }
+  }
+  

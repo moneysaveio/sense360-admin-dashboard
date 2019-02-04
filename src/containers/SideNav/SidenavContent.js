@@ -85,13 +85,13 @@ class SidenavContent extends Component {
                     <li className="menu">
                         <a role="button" href="javascript:void(0)">
                             <i className="zmdi zmdi-chart zmdi-hc-fw"/>
-                            <span className="nav-text"><IntlMessages id="sidebar.chart"/></span>
+                            <span className="nav-text"><IntlMessages id="sidebar.modules"/></span>
                         </a>
 
                         <ul className="sub-menu">
                             <li>
                                 <NavLink className="prepend-icon" to="/app/chart/sensors">
-                                    <span className="nav-text"><IntlMessages id="sidebar.chart.sensors"/></span>
+                                    <span className="nav-text"><IntlMessages id="sidebar.modules.energy"/></span>
                                 </NavLink>
                             </li>
                         </ul>

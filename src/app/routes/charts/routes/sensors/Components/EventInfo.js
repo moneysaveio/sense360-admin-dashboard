@@ -14,6 +14,7 @@ class EventInfo extends Component {
         subTitle: "Data events monitored",
         lastReceived: false
     }
+
     componentDidMount() {
         this.props.fetchAllSensorDataCount();
         const intervalId = setInterval(() => {

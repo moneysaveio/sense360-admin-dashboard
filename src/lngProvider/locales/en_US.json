@@ -95,6 +95,7 @@
   "sidebar.map.mapDrawing": "Map Drawing",
   "sidebar.map.mapClustering": "Map Clustering",
   "sidebar.modules": "Modules",
+  "sidebar.modules.energy": "Energy Meter",
   "sidebar.calendar": "Calendar",
   "sidebar.calendar.basic": "Basic",
   "sidebar.calendar.cultures": "Cultures",

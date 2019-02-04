@@ -11,6 +11,7 @@ import CardBox from 'components/CardBox';
 import ContainerHeader from 'components/ContainerHeader';
 import IntlMessages from 'util/IntlMessages';
 import EventInfo from './Components/EventInfo';
+import ErrorBoundary from './Components/errors/ErrorBoundary';
 
 
 import VoltageLineChart from './Components/VoltageLineChart';
@@ -23,16 +24,19 @@ const LineChart = ({ match }) => {
             <ContainerHeader title={<IntlMessages id="sidebar.chart.sensors" />} match={match} />
 
             <div className="row">
-                <CardBox heading="Voltage">
-                    <VoltageLineChart />
-                </CardBox>
-                <CardBox heading="Current">
-                    <CurrentLineChart />
-                </CardBox>
-                <CardBox heading="Powerfactor">
-                    <PowerFactorLineChart />
-                </CardBox>
-                <EventInfo />
+                <ErrorBoundary>
+                    <CardBox heading="Voltage">
+                        <VoltageLineChart />
+                    </CardBox>
+                    <CardBox heading="Current">
+                        <CurrentLineChart />
+                    </CardBox>
+                    <CardBox heading="Powerfactor">
+                        <PowerFactorLineChart />
+                    </CardBox>
+                    <EventInfo />
+                </ErrorBoundary>
+
             </div>
         </div>
     );

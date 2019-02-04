@@ -35,8 +35,6 @@ class SignUp extends React.Component {
         if (this.props.authUser !== null) {
             if (this.props.authUser.emailVerified) {
                 this.props.history.push ('/');
-            } else {
-                this.props.history.push('/signin');
             }
         }
     }
