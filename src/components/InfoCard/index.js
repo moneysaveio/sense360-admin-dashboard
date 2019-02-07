@@ -5,7 +5,7 @@ const InfoCard = ({data, styleName}) => {
     return (
         <div className={`jr-card net-chart`}>
             <div className={`jr-card-thumb  ${styleName}`}>
-                <i className="zmdi zmdi-mic-outline"/>
+                <i className="zmdi zmdi-flash"/>
             </div>
             <div className="jr-card-body br-break">
                 <h4 className="mb-0"><strong>{data.title}</strong></h4>

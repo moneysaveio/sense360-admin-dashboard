@@ -28,6 +28,7 @@ const createUserWithEmailPasswordRequest = async (email, password) =>
         .then (authUser => authUser)
         .catch (error => error);
 
+
 const signInUserWithEmailPasswordRequest = async (email, password) =>
     await  auth.signInWithEmailAndPassword (email, password)
         .then (authUser => authUser)
@@ -37,7 +38,6 @@ const signOutRequest = async () =>
     await  auth.signOut ()
         .then (authUser => authUser)
         .catch (error => error);
-
 
 function* createUserWithEmailPassword ({ payload }) {
     const { email, password } = payload;

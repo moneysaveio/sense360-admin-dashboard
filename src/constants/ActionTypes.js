@@ -138,6 +138,18 @@ export const REMOVE_LABEL = 'remove_label';
 export const UPDATE_SEARCH = 'update_search';
 
 // custom
+
+// locations
 export const FETCH_ALL_LOCATIONS = 'fetch_all_locations';
 export const FETCH_ALL_LOCATIONS_SUCCESS = 'fetch_all_locations_success';
+export const SHOW_AlL_LOCATIONS = 'show_all_locations';
+export const CREATE_LOCATIONS = 'create_locations';
+export const CREATE_LOCATIONS_SUCCESS = 'create_locations_success';
+export const POST_LOCATION_DATA = 'post_location_data';
+
+// sensors
+export const FETCH_RECENT_SENSOR_DATA = 'fetch_recent_sensor_data';
+export const FETCH_RECENT_SENSOR_DATA_SUCCESS = 'fetch_recent_sensor_data_success';
+export const FETCH_ALL_SENSOR_DATA_COUNT = 'fetch_all_sensor_data_count_request'
+export const FETCH_ALL_SENSOR_DATA_COUNT_SUCCESS = 'fetch_all_sensor_data_count_success'
 

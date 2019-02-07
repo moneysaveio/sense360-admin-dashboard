@@ -30,7 +30,7 @@ class SignIn extends React.Component {
                 this.props.hideMessage ();
             }, 100);
         }
-        if (this.props.authUser !== null) {
+        if (this.props.authUser) {
             this.props.history.push ('/');
         }
     }

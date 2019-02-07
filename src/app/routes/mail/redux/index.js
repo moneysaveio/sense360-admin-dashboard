@@ -50,6 +50,10 @@ import IntlMessages from 'util/IntlMessages';
 import CircularProgress from 'components/CircularProgress'
 import CustomScrollbars from 'util/CustomScrollbars';
 
+// custom
+import {
+    fetchAllLocations
+} from 'actions/Location';
 
 class MailWithRedux extends Component {
 
@@ -181,6 +185,8 @@ class MailWithRedux extends Component {
         }
     };
     getAllMail = () => {
+        this.props.fetchAllLocations();
+        console.log("fetched all locations")
         this.props.getAllMail ();
     };
     getUnselectedAllMail = () => {
@@ -451,7 +457,8 @@ class MailWithRedux extends Component {
 }
 
 
-const mapStateToProps = ({ mail, settings }) => {
+const mapStateToProps = ({ mail, settings, locations }) => {
+    console.log("locations mapstatetoprops", locations)
     const { width } = settings;
     const {
         searchMail,
@@ -527,5 +534,6 @@ export default connect (mapStateToProps, {
     onSearchMail,
     onStartSelect,
     setCurrentMailNull,
-    updateMailSearch
+    updateMailSearch,
+    fetchAllLocations
 }) (MailWithRedux);
