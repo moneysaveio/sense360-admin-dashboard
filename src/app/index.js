@@ -21,6 +21,8 @@ import ExtraElements from './routes/extraElements'
 import eCommerce from './routes/eCommerce'
 import AppModule from './routes/appModule'
 import ExtraPages from './routes/extraPages';
+import SensorEvents from './routes/sensorEvents';
+
 
 import {
     ABOVE_THE_HEADER,
@@ -67,6 +69,7 @@ class App extends React.Component {
                     <main className="app-main-content-wrapper">
                         <div className="app-main-content">
                             <Switch>
+                                <Route path={`${match.url}/sensor-events`} component={SensorEvents}/>
                                 <Route path={`${match.url}/dashboard`} component={Dashboard}/>
                                 <Route path={`${match.url}/components`} component={Components}/>
                                 <Route path={`${match.url}/icons`} component={Icons}/>
