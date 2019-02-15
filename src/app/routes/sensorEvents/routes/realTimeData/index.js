@@ -19,7 +19,7 @@ const RealTimeData = ({data=sensorEventData}) => {
 
     return(
         <div>
-            <CardBox styleName="col-12" cardStyle="p-0 border-0" heading={<IntlMessages id="sensorEvents.realTimeData"/>}
+            <CardBox styleName="col-12" cardStyle="p-0 border-0"
                      headerOutside>
                 <ReactTable
                     data={data}
