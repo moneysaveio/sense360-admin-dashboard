@@ -97,6 +97,15 @@ class SidenavContent extends Component {
                         </ul>
                     </li>
 
+                    <li className="nav-header"><IntlMessages id="sidebar.sensorEvents"/></li>
+
+                    <li className="menu no-arrow">
+                        <NavLink to="/app/sensor-events/real-time-data">
+                        <i className="zmdi zmdi-view-web zmdi-hc-fw"/>
+                            <span className="nav-text"><IntlMessages id="sidebar.realTimeData"/></span>
+                        </NavLink>
+                    </li>
+
                     <li className="nav-header"><IntlMessages id="sidebar.admin"/></li>
 
                     <li className="menu">
