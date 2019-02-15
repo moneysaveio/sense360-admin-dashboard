@@ -1,5 +1,8 @@
 {
+  "sensorEvents.realTimeData": "Sensor Events - Real Time Data",
   "sidebar.main": "Main",
+  "sidebar.sensorEvents": "Sensor Events",
+  "sidebar.sensorEvents.realTimeData": "Real Time Data",
   "sidebar.admin": "Admin",
   "sidebar.dashboard": "Dashboard",
   "sidebar.dashboard.default": "Default",
